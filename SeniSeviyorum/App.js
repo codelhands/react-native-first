@@ -1,24 +1,21 @@
 import React from 'react';
-import {View, Text, SafeAreaView, Button} from 'react-native';
+import {View, Text, SafeAreaView, StyleSheet} from 'react-native';
 
 const App = () => {
   return (
-    //stringlerde süslü paranteze gerek yok
-    // control space ile component
-    // hiyerarşi yapısı viewin çocuğu text'tir.
     <SafeAreaView>
-      <View>
+      <View style={styles.container}>
         <Text>Hello World</Text>
       </View>
-      <Text>Hello World 2</Text>
-      <Button
-        title="Press Me!"
-        onPress={() => {
-          null;
-        }}
-      />
     </SafeAreaView>
   );
 };
+// style sheet özel bir moduldür
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'red',
+  },
+});
 
 export default App;
