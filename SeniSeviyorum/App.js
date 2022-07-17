@@ -1,13 +1,24 @@
 import React from 'react';
-import {View, Text, SafeAreaView, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  TouchableOpacity,
+  StyleSheet,
+} from 'react-native';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.box_1}></View>
-      <View style={styles.box_2}></View>
-      <View style={styles.box_3}></View>
-      <View style={styles.box_4}></View>
+      <View style={styles.card_container}>
+        <View style={styles.card_body}>
+          <Text style={styles.card_title}>Eddar Stark</Text>
+          <Text style={styles.card_text}>Winter is coming...</Text>
+        </View>
+        <TouchableOpacity style={styles.card_button_container}>
+          <Text style={styles.card_button_title}>I LIKED</Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };
@@ -16,30 +27,40 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
-    backgroundColor: 'yellow',
-    justifyContent: 'space-evenly',
-    alignItems: 'center', //hizza
+    backgroundColor: '#e0e0e0',
   },
-  box_1: {
-    width: 75,
-    height: 75,
-    backgroundColor: 'red',
+  card_container: {
+    backgroundColor: 'white',
+    margin: 10,
+    borderWidth: 0.1,
+    borderColor: 'gray',
+    borderRadius: 10,
   },
-  box_2: {
-    width: 75,
-    height: 75,
-    backgroundColor: 'blue',
+  card_body: {
+    padding: 10,
   },
-  box_3: {
-    width: 75,
-    height: 75,
+  card_title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    margin: 10,
+    marginBottom: 3,
+  },
+  card_text: {
+    fontSize: 10,
+    margin: 10,
+    marginTop: 3,
+  },
+  card_button_container: {
     backgroundColor: 'aqua',
+    padding: 10,
+    alignItems: 'center',
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
   },
-  box_4: {
-    width: 75,
-    height: 75,
-    backgroundColor: 'orange',
+  card_button_title: {
+    fontSize: 10,
+    fontWeight: 'bold',
+    color: 'white',
   },
 });
 
